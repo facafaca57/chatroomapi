@@ -5,7 +5,7 @@ var port = process.env.PORT || 8080;
 let apiRoutes = require("./routes")
 let mongoose = require('mongoose');
 
-const dbPath = 'mongodb://localhost/chatRoomAPI';
+const dbPath = process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/chatRoomAPI';
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
 const mongo = mongoose.connect(dbPath, options);
 
