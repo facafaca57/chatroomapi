@@ -5,13 +5,16 @@ var port = process.env.PORT || 8080;
 let apiRoutes = require("./routes")
 let mongoose = require('mongoose');
 
-const dbPath = process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/chatRoomAPI';
+const dbPath = process.env.MONGODB_URI || 'mongodb://localhost/chat-room-api-andrei';
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
 const mongo = mongoose.connect(dbPath, options);
 
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.get('/', function (req, res) {
+    res.redirect('/api')
+})
 app.use('/api', apiRoutes)
 
 app.listen(port, function() {

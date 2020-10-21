@@ -4,8 +4,8 @@ const emailRegex = require('email-regex');
 
 router.get('/', function(req, res) {
     res.json({
-        status: 'API Works',
-        message: 'Welcome to FirstRest API'
+        status: 'API Chat Room',
+        message: 'Welcome to Chat room \nTo read Documentation API please go to "./api/doc/" page'
     });
 });
 
@@ -31,10 +31,12 @@ var validateData = function() {
 };
 
 router.route('/messages/list/:count')
-    .get(modelController.index)
+    .get(modelController.index);
 router.route('/messages/list/')
     .post(validateData(), modelController.add);
 router.route('/messages/single/:msg_id')
     .get(modelController.view);
+router.route('/doc/')
+    .get(modelController.doc); 
 
 module.exports = router;

@@ -40,3 +40,7 @@ exports.view = function (req, res) {
         });
     });
 };
+
+exports.doc = function (req, res) {
+    res.sendFile(process.env.PWD + "/docs.pdf" );
+}; 
