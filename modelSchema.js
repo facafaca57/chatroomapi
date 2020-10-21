@@ -8,6 +8,12 @@ var modelSchema = mongoose.Schema({
     msg: {
         type: String,
         required: true
+    },
+    create_date:{
+        type: String
+    },
+    update_date:{ 
+        type:String
     }
 });
 

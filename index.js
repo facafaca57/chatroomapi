@@ -5,6 +5,8 @@ var port = process.env.PORT || 8080;
 let apiRoutes = require("./routes")
 let mongoose = require('mongoose');
 
+//let uri = "mongodb+srv://admin:admin@cluster0.lz0ec.mongodb.net/chatRoomAPI?retryWrites=true&w=majority"; //for local test
+
 const dbPath = process.env.MONGODB_URI || 'mongodb://localhost/chat-room-api-andrei';
 const options = {useNewUrlParser: true, useUnifiedTopology: true}
 const mongo = mongoose.connect(dbPath, options);
