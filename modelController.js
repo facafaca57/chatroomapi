@@ -8,7 +8,7 @@ function dateNow(){
     let hours = date_ob.getHours();
     let minutes = date_ob.getMinutes();
     let seconds = date_ob.getSeconds();
-    return hours + "-" + minutes + "-" + seconds + " " + date + ":" + month + ":" + year;
+    return hours + "-" + minutes + "-" + seconds + " " + date + ":" + month + ":" + year; 
 }
 
 exports.index = function (req, res) {
@@ -56,4 +56,4 @@ exports.view = function (req, res) {
 
 exports.doc = function (req, res) {
     res.sendFile(process.env.PWD + "/docs.pdf" );
-}; 
+};

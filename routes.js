@@ -39,4 +39,4 @@ router.route('/messages/single/:msg_id')
 router.route('/doc/')
     .get(modelController.doc); 
 
-module.exports = router;
+module.exports = router;  
